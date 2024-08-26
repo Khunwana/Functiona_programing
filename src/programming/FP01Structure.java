@@ -21,7 +21,7 @@ public class FP01Structure {
 	private static void printAllEvemNumbersinListStructured(List<Integer> numbers) {
 		for(int number : numbers)
 		{
-			if(number % 2 == 0)
+			if(number % 2 != 0)
 			{				
 				System.out.println(number);
 			}

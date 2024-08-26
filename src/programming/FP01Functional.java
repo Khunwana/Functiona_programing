@@ -35,7 +35,7 @@ public class FP01Functional {
 		
 		numbers.stream()
 //			.filter(FP01Functional::isEven) //filter for even numbers 
-			.filter(number -> number % 2 == 0) //using lambda expression for even numbers
+			.filter(number -> number % 2 != 0) //using lambda expression for even numbers
 			.forEach(FP01Functional::print); //printing numbers
 //		for(int number : numbers)
 //		{
