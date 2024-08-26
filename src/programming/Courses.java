@@ -12,6 +12,10 @@ public class Courses {
 		printAllCoursesWithSpringindividuallyFunctional(List.of("Spring","Spring boot","API","AWS","PCP","AZURE","DOCKER") ); //using functional programming for String with Spring
 		//ex4
 		printAllCoursesWithAtleast4LettersindividuallyFunctional(List.of("Spring","Spring boot","API","AWS","PCP","AZURE","DOCKER") ); // using functional programming for String with more than 4 characters
+		//ex5
+		prinNumbeOfCharInString(List.of("Spring","Spring boot","API","AWS","PCP","AZURE","DOCKER") ); //length of String using functional programming
+		
+	
 	}
 
 	private static void printAllCoursesindividually(List<String> courses) {
@@ -31,11 +35,18 @@ public class Courses {
 				.filter(course -> course.contains("Spring"))
 				.forEach(Courses::printCourses);
 	}	
-	
+
 	private static void printAllCoursesWithAtleast4LettersindividuallyFunctional(List<String> courses) {
 		courses.stream()
 				.filter(course -> course.length() > 4)
 				.forEach(Courses::printCourses);
+	}
+	private static void prinNumbeOfCharInString(List<String> courses) {
+		courses.stream()	
+				.filter(course -> course.length() > 4)
+				.filter(course -> course.contentEquals("Spring"))
+				.map(course -> course.length())
+				.forEach(System.out::println);
 	}	
 	
 	
