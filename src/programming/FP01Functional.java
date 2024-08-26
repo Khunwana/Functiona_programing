@@ -9,6 +9,10 @@ public class FP01Functional {
 		printAllNumbersinListFunctional(List.of(12,9,13,4,6,2,4,12,15));
 		System.out.println("Even numbeers");
 		printAllEvenNumbersinListFunctional(List.of(12,9,13,4,6,2,4,12,15));
+		System.out.println("Squre Even numbeers");
+		printSqureNumbersEveninListFunctional(List.of(12,9,13,4,6,2,4,12,15));
+		System.out.println("Cube Odd numbeers");
+		printCubeNumbersEveninListFunctional(List.of(12,9,13,4,6,2,4,12,15));
 		
 	}
 	
@@ -32,16 +36,22 @@ public class FP01Functional {
 		
 	}
 	private static void printAllEvenNumbersinListFunctional(List<Integer> numbers) {
-		
 		numbers.stream()
-//			.filter(FP01Functional::isEven) //filter for even numbers 
 			.filter(number -> number % 2 != 0) //using lambda expression for even numbers
 			.forEach(FP01Functional::print); //printing numbers
-//		for(int number : numbers)
-//		{
-//			System.out.println(number);
-//		}
-		
+	}
+
+	private static void printSqureNumbersEveninListFunctional(List<Integer> numbers) {
+		numbers.stream()
+			.filter(number -> number % 2 == 0) //using lambda expression for even numbers
+			.map(number -> number * number)
+			.forEach(FP01Functional::print); //printing numbers
+	}
+	private static void printCubeNumbersEveninListFunctional(List<Integer> numbers) {
+		numbers.stream()
+			.filter(number -> number % 2 != 0) //using lambda expression for even numbers
+			.map(number -> number * number * number)
+			.forEach(FP01Functional::print); //printing numbers
 	}
 
 }
